@@ -421,5 +421,44 @@ ADMIN
 </body>
 </html>
 
+lessons_py > theory_lessons > lesson_1.md > edit
+
+sudo dnf install vscode
+sudo dnf install python-3.13
+python extension for vs code 2026.8.0
+python -m venv .venv
+
+```
+fastapi==0.142.2
+uvicorn==0.54.0
+alembic==1.20.0
+SQLAlchemy==2.1.3
+psycopg==3.3.6
+greenlet==3.1.1
+python-jose[cryptography]
+Jinja2==3.1.6
+pwdlib[argon2]==0.3.1
+argon2==0.1.10
+python-multipart
+pydantic-settings==2.15.0
+aiosqlite
+```
+
+fastapi==0.142.2
+uvicorn==0.54.0
+alembic==1.20.0
+SQLAlchemy==2.1.3
+psycopg==3.3.6
+greenlet==3.1.1
+python-jose[cryptography]
+Jinja2==3.1.6
+pwdlib[argon2]==0.3.1
+argon2==0.1.10
+python-multipart
+pydantic-settings==2.15.0
+aiosqlite
+
+
+from fastapi import FastAPI
 
 -->
