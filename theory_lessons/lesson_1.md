@@ -139,4 +139,287 @@ base 10: 'hi'
 
 Здесь фигурируют три переменные: apples, eat_day и day. Каждой из них присваивается свое значение. Выражение <code>apples = apples - eat_day * day</code> сложное. Сначала выполняется подвыражение, стоящее справа от знака равенства. После этого его результат присваивается переменной apples, в результате чего ее старое значение (100) теряется. В подвыражении <code>apples - eat_day * day </code> вместо имен переменных на самом деле используются их значения, т. е. числа 100, 5 и 7.
 
-</p>
+<!-- LOGIN
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 320px; }
+        h2 { text-align: center; color: #333; }
+        input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #4a90e2; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #357ab8; }
+        .link { text-align: center; margin-top: 15px; font-size: 14px; }
+        .link a { color: #4a90e2; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Вход в систему</h2>
+        <form action="requests.html" method="get">
+            <input type="text" placeholder="Логин" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+        <div class="link">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></div>
+    </div>
+</body>
+</html> 
+
+SIGNUP
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 340px; }
+        h2 { text-align: center; color: #333; }
+        input { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #4a90e2; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #357ab8; }
+        .link { text-align: center; margin-top: 15px; font-size: 14px; }
+        .link a { color: #4a90e2; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Регистрация</h2>
+        <form action="login.html" method="get">
+            <input type="text" placeholder="ФИО" required>
+            <input type="text" placeholder="Логин" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Телефон" required>
+            <input type="password" placeholder="Пароль" required>
+            <input type="password" placeholder="Повторите пароль" required>
+            <button type="submit">Создать профиль</button>
+        </form>
+        <div class="link">Уже есть аккаунт? <a href="login.html">Войти</a></div>
+    </div>
+</body>
+</html>
+
+APPLICATIONS
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои заявки</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        .header { max-width: 900px; margin: 0 auto 20px; display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 20px; margin: 0; color: #333; }
+        nav a { margin-left: 15px; color: #4a90e2; text-decoration: none; font-size: 14px; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .request { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .request h3 { margin-top: 0; color: #333; }
+        .status { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; color: #fff; }
+        .status.new { background: #f39c12; }
+        .status.done { background: #27ae60; }
+        .status.rejected { background: #e74c3c; }
+        textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; margin-top: 10px; font-family: inherit; }
+        button { padding: 8px 16px; background: #4a90e2; color: #fff; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        button:hover { background: #357ab8; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Мои заявки</h1>
+        <nav>
+            <a href="create-request.html">Создать заявку</a>
+            <a href="login.html">Выйти</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="request">
+            <h3>Заявка №1 — Организация конференции</h3>
+            <p>Дата: 15.05.2024</p>
+            <p>Статус: <span class="status done">Проведено</span></p>
+            <label><b>Оставить отзыв:</b></label>
+            <textarea rows="3" placeholder="Ваш отзыв о мероприятии..."></textarea>
+            <button>Отправить отзыв</button>
+        </div>
+
+        <div class="request">
+            <h3>Заявка №2 — Проведение семинара</h3>
+            <p>Дата: 20.06.2024</p>
+            <p>Статус: <span class="status new">В обработке</span></p>
+        </div>
+
+        <div class="request">
+            <h3>Заявка №3 — Круглый стол</h3>
+            <p>Дата: 10.04.2024</p>
+            <p>Статус: <span class="status rejected">Отклонено</span></p>
+        </div>
+    </div>
+</body>
+</html>
+
+CREATE APPL
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание заявки</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        .header { max-width: 700px; margin: 0 auto 20px; display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 15px 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header h1 { font-size: 20px; margin: 0; color: #333; }
+        nav a { margin-left: 15px; color: #4a90e2; text-decoration: none; font-size: 14px; }
+        .card { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        label { display: block; margin-top: 15px; color: #555; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-family: inherit; }
+        button { margin-top: 20px; padding: 12px 25px; background: #27ae60; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #1e8449; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Создание заявки</h1>
+        <nav>
+            <a href="requests.html">Мои заявки</a>
+            <a href="login.html">Выйти</a>
+        </nav>
+    </div>
+
+    <div class="card">
+        <form action="requests.html" method="get">
+            <label>Название мероприятия</label>
+            <input type="text" placeholder="Например: Научная конференция" required>
+
+            <label>Тип мероприятия</label>
+            <select required>
+                <option value="">-- Выберите --</option>
+                <option>Конференция</option>
+                <option>Семинар</option>
+                <option>Круглый стол</option>
+                <option>Тренинг</option>
+                <option>Другое</option>
+            </select>
+
+            <label>Дата проведения</label>
+            <input type="date" required>
+
+            <label>Место проведения</label>
+            <input type="text" placeholder="Аудитория / адрес" required>
+
+            <label>Оплата</label>
+            <select required>
+                <option value="">-- Выберите --</option>
+                <option>Очно</option>
+                <option>СБП</option>
+                <option>Карта</option>
+            </select>
+
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+</body>
+</html>
+
+ADMIN
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+        .header { max-width: 1000px; margin: 0 auto 20px; display: flex; justify-content: space-between; align-items: center; background: #2c3e50; padding: 15px 25px; border-radius: 10px; color: #fff; }
+        .header h1 { font-size: 20px; margin: 0; }
+        nav a { margin-left: 15px; color: #ecf0f1; text-decoration: none; font-size: 14px; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .stats { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+        .stat { flex: 1; min-width: 180px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); text-align: center; }
+        .stat h3 { margin: 0; font-size: 28px; color: #4a90e2; }
+        .stat p { margin: 5px 0 0; color: #777; font-size: 14px; }
+        table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+        th { background: #f8f9fa; color: #333; }
+        .btn { padding: 6px 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 12px; margin-right: 5px; color: #fff; }
+        .btn.approve { background: #27ae60; }
+        .btn.reject { background: #e74c3c; }
+        .btn.delete { background: #95a5a6; }
+        .btn:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Панель администратора</h1>
+        <nav>
+            <a href="login.html">Выйти</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat"><h3>12</h3><p>Всего заявок</p></div>
+            <div class="stat"><h3>5</h3><p>Новая</p></div>
+            <div class="stat"><h3>6</h3><p>Мероприятие завершено</p></div>
+            <div class="stat"><h3>1</h3><p>Мероприятие назначено</p></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Пользователь</th>
+                    <th>Мероприятие</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Иванов И.И.</td>
+                    <td>Конференция</td>
+                    <td>15.05.2024</td>
+                    <td>В обработке</td>
+                    <td>
+                        <button class="btn approve">Принять</button>
+                        <button class="btn reject">Отклонить</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Петрова А.С.</td>
+                    <td>Семинар</td>
+                    <td>20.06.2024</td>
+                    <td>Проведено</td>
+                    <td>
+                        <button class="btn delete">Удалить</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Сидоров П.П.</td>
+                    <td>Круглый стол</td>
+                    <td>10.04.2024</td>
+                    <td>Отклонено</td>
+                    <td>
+                        <button class="btn approve">Принять</button>
+                        <button class="btn delete">Удалить</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
+-->
